@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "wallpaper-manager"
+version = "0.1.0"
+description = ""
+authors = ["Kacper Włodarczyk <kacperwlodarczyk@protonmail.com>"]
+readme = "README.md"
+packages = [{include = "wallpaper_manager"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+customtkinter = "^5.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
