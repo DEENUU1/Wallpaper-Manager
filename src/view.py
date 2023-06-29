@@ -77,4 +77,3 @@ class View(ct.CTk):
 
     def bind_previous(self, handler):
         self.previous.bind("<Button-1>", handler)
-

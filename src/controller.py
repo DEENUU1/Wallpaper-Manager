@@ -13,6 +13,7 @@ class Controller:
         self.view.bind_next(self.next_wallpaper)
         self.view.bind_previous(self.previous_wallpaper)
         self.view.bind_side_bar(self.toggle_sidebar)
+        self.display_images_names()
 
     def add_wallpaper(self, event=None) -> None:
         path = tkinter.filedialog.askopenfilename()
@@ -41,3 +42,7 @@ class Controller:
         else:
             self.view.sidebar_frame.grid()
         self.view.sidebar_open = not self.view.sidebar_open
+
+    def display_images_names(self):
+        for image_name in self.model.return_images_name():
+            self.view.listbox.insert(tkinter.END, image_name)
