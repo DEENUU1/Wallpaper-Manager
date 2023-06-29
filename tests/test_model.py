@@ -30,3 +30,7 @@ def test_delete_wallpaper(model):
 
 def test_get_wallpaper(model):
     assert model.get_wallpaper(1) == "C:\\Users\Test\Pulpit\Projects\Wallpaper-Manager\wallpapers\wallpaper_2.jpg"
+
+
+def test_current_wallpaper(model):
+    assert model.current_wallpaper == 1
