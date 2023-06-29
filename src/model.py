@@ -6,12 +6,14 @@ class Model:
         self.path = path
         self.current_index = 0
 
+    def get_wallpaper(self, index):
+        return self.path[index]
+
     def add_wallpaper(self, path: str):
-        print(path)
         return self.path.append(path)
 
-    def delete_wallpaper(self, path: str):
-        print(path)
+    def delete_wallpaper(self, index: int):
+        path = self.get_wallpaper(index)
         return self.path.remove(path)
 
     def get_current_wallpaper(self):
