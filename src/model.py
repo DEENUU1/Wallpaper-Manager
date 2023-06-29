@@ -24,3 +24,9 @@ class Model:
         if self.current_index >= len(self.path):
             self.current_index = 0
         return self.path[self.current_index]
+
+    def previous_wallpaper(self):
+        self.current_index -= 1
+        if self.current_index < 0:
+            self.current_index = len(self.path) - 1
+        return self.path[self.current_index]
