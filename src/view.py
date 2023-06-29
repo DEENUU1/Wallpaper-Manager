@@ -44,6 +44,12 @@ class View(ct.CTk):
         self.toggle_button = ct.CTkButton(self.content_frame, text="Toggle Sidebar")
         self.toggle_button.grid(row=1, column=2, pady=0)
 
+        self.scrollbar = tkinter.Scrollbar(self.content_frame, orient="vertical")
+        self.listbox = tkinter.Listbox(self.sidebar_frame, yscrollcommand=self.scrollbar.set)
+        self.scrollbar.config(command=self.listbox.yview)
+        self.scrollbar.grid(row=2, column=2, sticky="ns")
+        self.listbox.grid(row=2, column=0, columnspan=2, pady=10)
+
     def load_image(self, image_path: str) -> None:
         image = Image.open(image_path)
         image = image.resize(self.image_size, Image.ANTIALIAS)
