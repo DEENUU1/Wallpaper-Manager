@@ -44,8 +44,15 @@ class View(ct.CTk):
         self.toggle_button = ct.CTkButton(self.content_frame, text="Toggle Sidebar")
         self.toggle_button.grid(row=1, column=2, pady=0)
 
-        self.scrollbar = tkinter.Scrollbar(self.content_frame, orient="vertical")
-        self.listbox = tkinter.Listbox(self.sidebar_frame, yscrollcommand=self.scrollbar.set)
+        self.scrollbar = tkinter.Scrollbar(self.sidebar_frame, orient="vertical", background="black")
+        self.listbox = tkinter.Listbox(
+            self.sidebar_frame,
+            yscrollcommand=self.scrollbar.set,
+            width=20, height=20,
+            font={"Helvetica", 10},
+            background="#202020",
+            foreground="#ffffff"
+        )
         self.scrollbar.config(command=self.listbox.yview)
         self.scrollbar.grid(row=2, column=2, sticky="ns")
         self.listbox.grid(row=2, column=0, columnspan=2, pady=10)
