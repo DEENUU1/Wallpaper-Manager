@@ -1,6 +1,7 @@
 import tkinter
 import customtkinter as ct
 from model import Model
+from PIL import Image
 
 
 ct.set_appearance_mode("System")
@@ -28,8 +29,6 @@ class View(ct.CTk):
         self.next.pack(side="left")
         self.previous = ct.CTkButton(self.frame, text="Previous")
         self.previous.pack(side="left")
-
-        self
 
     def bind_add_wallpaper(self, handler):
         self.add_button.bind("<Button-1>", handler)
