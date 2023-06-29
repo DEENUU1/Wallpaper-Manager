@@ -19,7 +19,7 @@ class Model:
     def get_current_wallpaper(self):
         return self.path[self.current_index]
 
-    def next_wallpapepaper(self):
+    def next_wallpaper(self):
         self.current_index += 1
         if self.current_index >= len(self.path):
             self.current_index = 0

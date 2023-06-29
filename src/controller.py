@@ -26,11 +26,11 @@ class Controller:
             self.model.delete_wallpaper(path)
 
     def next_wallpaper(self, event=None) -> None:
-        path = self.model.next_wallpapepaper()
+        path = self.model.next_wallpaper()
         self.view.update_image(path)
 
     def previous_wallpaper(self, event=None) -> None:
-        path = self.model.previous_wallpapepaper()
+        path = self.model.previous_wallpaper()
         self.view.update_image(path)
 
     def run(self) -> None:
