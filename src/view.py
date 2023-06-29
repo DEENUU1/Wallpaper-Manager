@@ -20,15 +20,30 @@ class View(ct.CTk):
         self.frame = ct.CTkFrame(self, width=500, height=500)
         self.frame.pack()
 
+        self.load_image(self.model.get_current_wallpaper())
+
         self.add_button = ct.CTkButton(self.frame, text="Add Wallpaper")
         self.add_button.pack(side="left")
         self.remove_button = ct.CTkButton(self.frame, text="Remove Wallpaper")
         self.remove_button.pack(side="left")
 
         self.next = ct.CTkButton(self.frame, text="Next")
-        self.next.pack(side="left")
+        self.next.pack(side="top")
         self.previous = ct.CTkButton(self.frame, text="Previous")
-        self.previous.pack(side="left")
+        self.previous.pack(side="top")
+
+    def load_image(self, image_path: str) -> None:
+        image = Image.open(image_path)
+        image = image.resize((500, 500), Image.ANTIALIAS)
+        self.photo = ct.CTkImage(light_image=image, dark_image=image)
+        self.image = ct.CTkLabel(self.frame, image=self.photo)
+        self.image.pack()
+
+    def update_image(self, image_path: str) -> None:
+        image = Image.open(image_path)
+        image = image.resize((500, 500), Image.ANTIALIAS)
+        self.photo = ct.CTkImage(light_image=image, dark_image=image)
+        self.image.configure(image=self.photo)
 
     def bind_add_wallpaper(self, handler):
         self.add_button.bind("<Button-1>", handler)
