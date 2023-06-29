@@ -35,14 +35,14 @@ class View(ct.CTk):
     def load_image(self, image_path: str) -> None:
         image = Image.open(image_path)
         image = image.resize((500, 500), Image.ANTIALIAS)
-        self.photo = ct.CTkImage(light_image=image, dark_image=image)
+        self.photo = ct.CTkImage(light_image=image, dark_image=image, size=(450, 450))
         self.image = ct.CTkLabel(self.frame, image=self.photo)
         self.image.pack()
 
     def update_image(self, image_path: str) -> None:
         image = Image.open(image_path)
         image = image.resize((500, 500), Image.ANTIALIAS)
-        self.photo = ct.CTkImage(light_image=image, dark_image=image)
+        self.photo = ct.CTkImage(light_image=image, dark_image=image, size=(450, 450))
         self.image.configure(image=self.photo)
 
     def bind_add_wallpaper(self, handler):
