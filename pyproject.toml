@@ -10,6 +10,7 @@ packages = [{include = "wallpaper_manager"}]
 python = "^3.11"
 customtkinter = "^5.2.0"
 pillow = "^9.5.0"
+pytest = "^7.4.0"
 
 
 [build-system]

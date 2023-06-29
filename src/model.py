@@ -1,11 +1,9 @@
+from typing import List
+
+
 class Model:
-    def __init__(self) -> None:
-        self.path = [
-            "C:\\Users\Kacper\Pulpit\Projects\Wallpaper-Manager\wallpapers\wallpaper_1.jpg",
-            "C:\\Users\Kacper\Pulpit\Projects\Wallpaper-Manager\wallpapers\wallpaper_2.jpg",
-            "C:\\Users\Kacper\Pulpit\Projects\Wallpaper-Manager\wallpapers\wallpaper_3.jpg",
-            "C:\\Users\Kacper\Pulpit\Projects\Wallpaper-Manager\wallpapers\wallpaper_4.jpg",
-        ]
+    def __init__(self, path: List[str] = None) -> None:
+        self.path = path
         self.current_index = 0
 
     def add_wallpaper(self, path: str):
