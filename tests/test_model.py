@@ -1,5 +1,5 @@
 import pytest
-from src.model import Model
+from src.wallpaper_manager.model import Model
 
 
 @pytest.fixture
