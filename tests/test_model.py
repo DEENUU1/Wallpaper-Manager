@@ -33,4 +33,22 @@ def test_get_wallpaper(model):
 
 
 def test_current_wallpaper(model):
-    assert model.current_wallpaper == 1
+    current = model.get_current_wallpaper()
+    assert current == "C:\\Users\\Test\\Pulpit\\Projects\\Wallpaper-Manager\\wallpapers\\wallpaper_1.jpg"
+
+
+def test_next_wallpaper(model):
+    model.next_wallpaper()
+    current = model.get_current_wallpaper()
+    assert current == "C:\\Users\Test\Pulpit\Projects\Wallpaper-Manager\wallpapers\wallpaper_2.jpg"
+
+
+def test_previous_wallpaper(model):
+    model.previous_wallpaper()
+    current = model.get_current_wallpaper()
+    assert current == "C:\\Users\Test\Pulpit\Projects\Wallpaper-Manager\wallpapers\wallpaper_4.jpg"
+
+
+def test_images_name(model):
+    assert model.return_images_name() == ["wallpaper_1.jpg", "wallpaper_2.jpg", "wallpaper_3.jpg", "wallpaper_4.jpg"]
+    assert len(model.return_images_name()) == 4
