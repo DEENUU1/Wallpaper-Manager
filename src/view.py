@@ -36,7 +36,7 @@ class View(ct.CTk):
         image = Image.open(image_path)
         image = image.resize((500, 500), Image.ANTIALIAS)
         self.photo = ct.CTkImage(light_image=image, dark_image=image, size=(450, 450))
-        self.image = ct.CTkLabel(self.frame, image=self.photo)
+        self.image = ct.CTkLabel(self.frame, image=self.photo, text="")
         self.image.pack()
 
     def update_image(self, image_path: str) -> None:
