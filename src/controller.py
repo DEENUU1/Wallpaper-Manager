@@ -12,6 +12,7 @@ class Controller:
         self.view.bind_remove_wallpaper(self.remove_wallpaper)
         self.view.bind_next(self.next_wallpaper)
         self.view.bind_previous(self.previous_wallpaper)
+        self.view.bind_side_bar(self.toggle_sidebar)
 
     def add_wallpaper(self, event=None) -> None:
         path = tkinter.filedialog.askopenfilename()
@@ -33,3 +34,10 @@ class Controller:
 
     def run(self) -> None:
         self.view.mainloop()
+
+    def toggle_sidebar(self, handler):
+        if self.view.sidebar_open:
+            self.view.sidebar_frame.grid_remove()
+        else:
+            self.view.sidebar_frame.grid()
+        self.view.sidebar_open = not self.view.sidebar_open
