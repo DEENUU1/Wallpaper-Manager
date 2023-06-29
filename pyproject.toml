@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Kacper Włodarczyk <kacperwlodarczyk@protonmail.com>"]
 readme = "README.md"
-packages = [{include = "wallpaper_manager"}]
+packages = [{include = "src", from = ".", format = "sdist"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
