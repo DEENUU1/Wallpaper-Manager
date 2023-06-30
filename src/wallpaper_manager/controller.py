@@ -50,6 +50,9 @@ class Controller:
         for image_name in self.model.return_images_name():
             self.view.listbox.insert(tkinter.END, image_name)
 
+    def get_selected_image_name(self) -> str:
+        return self.view.listbox.get(self.view.listbox.curselection())
+
     def set_wallpaper(self, event=None) -> None:
         current_wallpaper = self.model.get_current_wallpaper()
         ctypes.windll.user32.SystemParametersInfoW(20, 0, current_wallpaper, 0)
