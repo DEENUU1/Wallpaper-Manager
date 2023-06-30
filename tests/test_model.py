@@ -50,5 +50,5 @@ def test_previous_wallpaper(model):
 
 
 def test_images_name(model):
-    assert model.return_images_name() == ["wallpaper_1.jpg", "wallpaper_2.jpg", "wallpaper_3.jpg", "wallpaper_4.jpg"]
+    assert model.return_images_name() == {0: "wallpaper_1.jpg", 1: "wallpaper_2.jpg", 2: "wallpaper_3.jpg", 3: "wallpaper_4.jpg"}
     assert len(model.return_images_name()) == 4

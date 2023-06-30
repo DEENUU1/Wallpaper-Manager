@@ -47,7 +47,7 @@ class Controller:
         self.view.sidebar_open = not self.view.sidebar_open
 
     def display_images_names(self) -> None:
-        for image_name in self.model.return_images_name():
+        for image_name in self.model.return_images_name().values():
             self.view.listbox.insert(tkinter.END, image_name)
 
     def set_wallpaper(self, event=None) -> None:

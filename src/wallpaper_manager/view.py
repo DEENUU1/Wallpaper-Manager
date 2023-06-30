@@ -56,9 +56,20 @@ class View(ct.CTk):
             background="#202020",
             foreground="#ffffff"
         )
+        self.listbox.bind('<<ListboxSelect>>', self.on_select)
         self.scrollbar.config(command=self.listbox.yview)
         self.scrollbar.grid(row=3, column=2, sticky="ns")
         self.listbox.grid(row=3, column=0, columnspan=2, pady=10)
+
+    def on_select(self, event) -> None:
+        widget = event.widget
+        selection = widget.curselection()
+        if selection:
+            selected_item = widget.get(selection[0])
+            image_dict = self.model.return_images_name()
+            selected_index = [index for index,name in image_dict.items() if name == selected_item][0]
+            image_path = self.model.get_wallpaper(selected_index)
+            self.update_image(image_path)
 
     def load_image(self, image_path: str) -> None:
         image = Image.open(image_path)
