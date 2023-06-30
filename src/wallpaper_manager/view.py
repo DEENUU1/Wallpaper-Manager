@@ -34,6 +34,9 @@ class View(ct.CTk):
         self.remove_button = ct.CTkButton(self.sidebar_frame, text="Remove Wallpaper")
         self.remove_button.grid(padx=10)
 
+        self.set_wallpaper = ct.CTkButton(self.sidebar_frame, text="Set as a Wallpaper")
+        self.set_wallpaper.grid(padx=10)
+
         self.load_image(self.model.get_current_wallpaper())
 
         self.next = ct.CTkButton(self.content_frame, text="Next")
@@ -42,7 +45,7 @@ class View(ct.CTk):
         self.previous.grid(row=1, column=0, pady=0)
 
         self.toggle_button = ct.CTkButton(self.content_frame, text="Toggle Sidebar")
-        self.toggle_button.grid(row=1, column=2, pady=0)
+        self.toggle_button.grid(row=1, column=3, pady=0)
 
         self.scrollbar = tkinter.Scrollbar(self.sidebar_frame, orient="vertical", background="black")
         self.listbox = tkinter.Listbox(
@@ -54,8 +57,8 @@ class View(ct.CTk):
             foreground="#ffffff"
         )
         self.scrollbar.config(command=self.listbox.yview)
-        self.scrollbar.grid(row=2, column=2, sticky="ns")
-        self.listbox.grid(row=2, column=0, columnspan=2, pady=10)
+        self.scrollbar.grid(row=3, column=2, sticky="ns")
+        self.listbox.grid(row=3, column=0, columnspan=2, pady=10)
 
     def load_image(self, image_path: str) -> None:
         image = Image.open(image_path)
@@ -84,3 +87,6 @@ class View(ct.CTk):
 
     def bind_previous(self, handler):
         self.previous.bind("<Button-1>", handler)
+
+    def bind_set_wallpaper(self, handler):
+        self.set_wallpaper.bind("<Button-1>", handler)
