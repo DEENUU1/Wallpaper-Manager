@@ -32,7 +32,7 @@ class Model:
         return self.path[self.current_index]
 
     def return_images_name(self):
-        names = []
-        for i in range(len(self.path)):
-            names.append(self.path[i].split("\\")[-1])
+        names = {}
+        for i, path in enumerate(self.path):
+            names[i] = path.split("\\")[-1]
         return names
