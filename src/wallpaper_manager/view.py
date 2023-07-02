@@ -29,6 +29,9 @@ class View(ct.CTk):
         self.sidebar_frame.grid(row=0, column=0, sticky="ns")
         self.content_frame.grid(row=0, column=1, sticky="nsew")
 
+        self.label = ct.CTkLabel(self.sidebar_frame, text="Wallpapers")
+        self.label.grid(pady=10)
+
         self.add_button = ct.CTkButton(self.sidebar_frame, text="Add Wallpaper")
         self.add_button.grid(pady=10, padx=10)
         self.remove_button = ct.CTkButton(self.sidebar_frame, text="Remove Wallpaper")
@@ -40,7 +43,7 @@ class View(ct.CTk):
         self.load_image(self.model.get_current_wallpaper())
 
         self.next = ct.CTkButton(self.content_frame, text="Next")
-        self.next.grid(row=1, column=1, pady=0)
+        self.next.grid(row=1, column=2, pady=0)
         self.previous = ct.CTkButton(self.content_frame, text="Previous")
         self.previous.grid(row=1, column=0, pady=0)
 
