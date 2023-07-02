@@ -9,7 +9,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/DEENUU1/">
-    <img src="images/gui1.jpg" alt="Logo" width="700" height="350">
+    <img src="images/gif.gif" alt="Logo" width="700" height="350">
   </a>
 
   <h3 align="center">Wallpaper Manager</h3>
@@ -38,11 +38,9 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#configuration">Configuration</a></li>
       </ul>
     </li>
     <li><a href="#unit-tests">Tests</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#author">Author</a></li>
   </ol>
@@ -61,15 +59,6 @@ Python GUI application which allows to easily manage wallpapers, change, add, re
   - Set wallpaper
   - Add own wallpapers
   - Delete existing wallpapers
-
-
-<img src="images/home.png" alt="home">
-<img src="images/search.png" alt="search">
-<img src="images/result.png" alt="result">
-<img src="images/result2.png" alt="result-2">
-<img src="images/register.png" alt="register">
-<img src="images/report.png" alt="report">
-
 
 
 <!-- GETTING STARTED -->
