@@ -63,8 +63,8 @@ class View(ct.CTk):
         )
         self.listbox.bind('<<ListboxSelect>>', self.on_select)
         self.scrollbar.config(command=self.listbox.yview)
-        self.scrollbar.grid(row=3, column=2, sticky="ns")
-        self.listbox.grid(row=3, column=0, columnspan=2, pady=10)
+        self.scrollbar.grid(row=4, column=2, sticky="ns")
+        self.listbox.grid(row=4, column=0, columnspan=2, pady=10)
 
     def update_listbox(self) -> None:
         self.listbox.delete(0, tkinter.END)
