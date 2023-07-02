@@ -23,10 +23,14 @@ class View(ct.CTk):
         self.grid_columnconfigure(1, weight=1)
         self.grid_rowconfigure(0, weight=1)
 
+        for i in range(10):
+            self.grid_rowconfigure(i, weight=1)
+            self.grid_columnconfigure(i, weight=1)
+
         self.sidebar_frame = ct.CTkFrame(self, fg_color="#202020")
         self.content_frame = ct.CTkFrame(self)
 
-        self.sidebar_frame.grid(row=0, column=0, sticky="ns")
+        self.sidebar_frame.grid(row=0, column=0, sticky="nsew")
         self.content_frame.grid(row=0, column=1, sticky="nsew")
 
         self.label = ct.CTkLabel(self.sidebar_frame, text="Wallpapers")
