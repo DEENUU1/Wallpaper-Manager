@@ -6,7 +6,7 @@ class Model:
     Data model with methods to manipulate the data.
     """
     def __init__(self, path: List[str] = None) -> None:
-        self.path = path
+        self.path = path if path is not None else []
         self.current_index = 0
 
     def get_wallpaper(self, index) -> str:

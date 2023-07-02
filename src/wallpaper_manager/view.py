@@ -13,9 +13,10 @@ class View(ct.CTk):
         super().__init__()
         self.model = model
         self.title("Wallpaper Manager")
-        self.geometry("1400x700")
+        self.geometry("1350x690")
         self.image_size = (900, 500)
         self.sidebar_open = True
+        self.resizable(False, False)
         self.create_ui()
 
     def create_ui(self) -> None:
@@ -65,6 +66,12 @@ class View(ct.CTk):
         self.scrollbar.grid(row=3, column=2, sticky="ns")
         self.listbox.grid(row=3, column=0, columnspan=2, pady=10)
 
+    def update_listbox(self) -> None:
+        self.listbox.delete(0, tkinter.END)
+        image_dict = self.model.return_images_name()
+        for name in image_dict.values():
+            self.listbox.insert(tkinter.END, name)
+
     def on_select(self, event) -> None:
         widget = event.widget
         selection = widget.curselection()
@@ -90,9 +97,6 @@ class View(ct.CTk):
 
     def bind_add_wallpaper(self, handler):
         self.add_button.bind("<Button-1>", handler)
-
-    def bind_side_bar(self, handler):
-        self.toggle_button.bind("<Button-1>", handler)
 
     def bind_remove_wallpaper(self, handler):
         self.remove_button.bind("<Button-1>", handler)

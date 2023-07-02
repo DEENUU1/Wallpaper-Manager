@@ -1,16 +1,18 @@
 from view import View
 from model import Model
 from controller import Controller
+import os
 
+
+WORK_DIR = os.path.dirname(__file__)
+WALLPAPERS_DIR = os.path.join(WORK_DIR, "wallpapers")
 PATH = [
-    "C:\\Users\Kacper\Pulpit\Projects\Wallpaper-Manager\wallpapers\wallpaper_1.jpg",
-    "C:\\Users\Kacper\Pulpit\Projects\Wallpaper-Manager\wallpapers\wallpaper_2.jpg",
-    "C:\\Users\Kacper\Pulpit\Projects\Wallpaper-Manager\wallpapers\wallpaper_3.jpg",
-    "C:\\Users\Kacper\Pulpit\Projects\Wallpaper-Manager\wallpapers\wallpaper_4.jpg",
+    os.path.join(WALLPAPERS_DIR, wallpaper) for wallpaper in os.listdir(WALLPAPERS_DIR) if wallpaper.endswith(".jpg")
 ]
 
 
 def main() -> None:
+
     model = Model(PATH)
     view = View(model)
     controller = Controller(model, view)

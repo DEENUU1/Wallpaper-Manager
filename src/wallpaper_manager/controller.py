@@ -20,12 +20,14 @@ class Controller:
         path = tkinter.filedialog.askopenfilename()
         if path:
             self.model.add_wallpaper(path)
+            self.display_images_names()
+            self.view.update_image(path)
 
     def remove_wallpaper(self, event=None) -> None:
         selected_index = self.view.listbox.curselection()
         if selected_index:
             self.model.delete_wallpaper(selected_index[0])
-            self.view.listbox.delete(selected_index)
+            self.view.update_listbox()
 
     def next_wallpaper(self, event=None) -> None:
         path = self.model.next_wallpaper()
