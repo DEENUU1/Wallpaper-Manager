@@ -21,7 +21,7 @@ class Model:
         """
         return self.path.append(path)
 
-    def delete_wallpaper(self, index: int) -> None:
+    def delete_wallpaper(self, index: str) -> None:
         """
         Deletes an image from the list of images
         """

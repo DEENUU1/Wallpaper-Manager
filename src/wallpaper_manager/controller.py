@@ -10,7 +10,7 @@ class Controller:
         self.model = model
         self.view = view
         self.view.bind_add_wallpaper(self.add_wallpaper)
-        # self.view.bind_remove_wallpaper(self.remove_wallpaper)
+        self.view.bind_remove_wallpaper(self.remove_wallpaper)
         self.view.bind_next(self.next_wallpaper)
         self.view.bind_previous(self.previous_wallpaper)
         self.view.bind_side_bar(self.toggle_sidebar)
@@ -22,11 +22,11 @@ class Controller:
         if path:
             self.model.add_wallpaper(path)
 
-    # def remove_wallpaper(self, event=None) -> None:
-    #     path = tkinter.filedialog.askopenfilename()
-    #
-    #     if path:
-    #         self.model.delete_wallpaper(path)
+    def remove_wallpaper(self, event=None) -> None:
+        selected_index = self.view.listbox.curselection()
+        if selected_index:
+            self.model.delete_wallpaper(selected_index[0])
+            self.view.listbox.delete(selected_index)
 
     def next_wallpaper(self, event=None) -> None:
         path = self.model.next_wallpaper()
