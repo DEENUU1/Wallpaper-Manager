@@ -13,8 +13,8 @@ class View(ct.CTk):
         super().__init__()
         self.model = model
         self.title("Wallpaper Manager")
-        self.geometry("1000x700")
-        self.image_size = (550, 500)
+        self.geometry("1400x700")
+        self.image_size = (900, 500)
         self.sidebar_open = True
         self.create_ui()
 
@@ -43,9 +43,6 @@ class View(ct.CTk):
         self.next.grid(row=1, column=1, pady=0)
         self.previous = ct.CTkButton(self.content_frame, text="Previous")
         self.previous.grid(row=1, column=0, pady=0)
-
-        self.toggle_button = ct.CTkButton(self.content_frame, text="Toggle Sidebar")
-        self.toggle_button.grid(row=1, column=3, pady=0)
 
         self.scrollbar = tkinter.Scrollbar(self.sidebar_frame, orient="vertical", background="black")
         self.listbox = tkinter.Listbox(

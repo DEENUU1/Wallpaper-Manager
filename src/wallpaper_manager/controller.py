@@ -13,7 +13,6 @@ class Controller:
         self.view.bind_remove_wallpaper(self.remove_wallpaper)
         self.view.bind_next(self.next_wallpaper)
         self.view.bind_previous(self.previous_wallpaper)
-        self.view.bind_side_bar(self.toggle_sidebar)
         self.display_images_names()
         self.view.bind_set_wallpaper(self.set_wallpaper)
 
