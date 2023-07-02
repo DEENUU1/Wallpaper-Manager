@@ -9,7 +9,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/DEENUU1/">
-    <img src="images/gif.gif" alt="Logo" width="700" height="350">
+    <img src="images/gif.gif" alt="Logo" width="700" height="450">
   </a>
 
   <h3 align="center">Wallpaper Manager</h3>
