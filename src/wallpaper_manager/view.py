@@ -78,8 +78,9 @@ class View(ct.CTk):
         if selection:
             selected_item = widget.get(selection[0])
             image_dict = self.model.return_images_name()
-            selected_index = [index for index,name in image_dict.items() if name == selected_item][0]
-            image_path = self.model.get_wallpaper(selected_index)
+            selected_index = [index for index, name in image_dict.items() if name == selected_item][0]
+            self.model.set_current_index(selected_index)  # Update current_index in the Model
+            image_path = self.model.get_current_wallpaper()
             self.update_image(image_path)
 
     def load_image(self, image_path: str) -> None:

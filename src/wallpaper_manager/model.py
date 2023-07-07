@@ -70,3 +70,9 @@ class Model:
         for i, path in enumerate(self.path):
             names[i] = path.split("\\")[-1]
         return names
+
+    def set_current_index(self, index: int) -> None:
+        """
+        Sets the current index to the given index
+        """
+        self.current_index = index

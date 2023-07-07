@@ -55,3 +55,4 @@ class Controller:
     def set_wallpaper(self, event=None) -> None:
         current_wallpaper = self.model.get_current_wallpaper()
         ctypes.windll.user32.SystemParametersInfoW(20, 0, current_wallpaper, 0)
+
