@@ -48,6 +48,7 @@ class Controller:
         self.view.sidebar_open = not self.view.sidebar_open
 
     def display_images_names(self) -> None:
+        self.view.listbox.delete(0, tkinter.END)
         for image_name in self.model.return_images_name().values():
             self.view.listbox.insert(tkinter.END, image_name)
 

@@ -1,4 +1,10 @@
+import os
+import shutil
 from typing import List, Dict
+
+
+WORK_DIR = os.path.dirname(__file__)
+WALLPAPERS_DIR = os.path.join(WORK_DIR, "wallpapers")
 
 
 class Model:
@@ -19,7 +25,11 @@ class Model:
         """
         Adds a new image to the list of images
         """
-        return self.path.append(path)
+        if os.path.isfile(path):
+            filename = os.path.basename(path)
+            destination = os.path.join(WALLPAPERS_DIR, filename)
+            shutil.copy(path, destination)
+            self.path.append(destination)
 
     def delete_wallpaper(self, index: str) -> None:
         """
